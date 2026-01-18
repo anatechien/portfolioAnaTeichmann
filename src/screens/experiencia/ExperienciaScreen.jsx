@@ -4,7 +4,7 @@ import { CONTAINER_STYLES, COLORS, BORDER_STYLES, FONTS } from '../../constants/
 
 function ExperienciaScreen() {
   return (
-    <div style={CONTAINER_STYLES.page}>
+    <div className="page-container" style={CONTAINER_STYLES.page}>
       {/* Card Experiência 1 */}
       <div
         style={{

@@ -8,16 +8,22 @@ import ProjetosScreen from './screens/projetos/ProjetosScreen';
 import ExperienciaScreen from './screens/experiencia/ExperienciaScreen';
 import ContatoScreen from './screens/contato/ContatoScreen';
 
+const ROUTE_CONFIG = [
+  { path: ROUTES.home, element: <HomeScreen /> },
+  { path: ROUTES.sobre, element: <SobreScreen /> },
+  { path: ROUTES.projetos, element: <ProjetosScreen /> },
+  { path: ROUTES.experiencia, element: <ExperienciaScreen /> },
+  { path: ROUTES.contato, element: <ContatoScreen /> },
+];
+
 function App() {
   return (
     <Router>
       <Layout>
         <Routes>
-          <Route path={ROUTES.home} element={<HomeScreen />} />
-          <Route path={ROUTES.sobre} element={<SobreScreen />} />
-          <Route path={ROUTES.projetos} element={<ProjetosScreen />} />
-          <Route path={ROUTES.experiencia} element={<ExperienciaScreen />} />
-          <Route path={ROUTES.contato} element={<ContatoScreen />} />
+          {ROUTE_CONFIG.map((route) => (
+            <Route key={route.path} path={route.path} element={route.element} />
+          ))}
         </Routes>
       </Layout>
     </Router>

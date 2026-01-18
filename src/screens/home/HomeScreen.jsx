@@ -2,25 +2,31 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../App.css';
 import { ROUTES } from '../../constants/routes';
-import fotoAna from "../../assets/avatarAna.png";
+import { HOME_MESSAGES } from '../../constants/messages';
+import fotoAna from '../../assets/avatarAna.png';
+
+const CTA_ARROW = '>';
+
+/**
+ * Componente da tela inicial (Home)
+ * Exibe apresentação pessoal e call-to-action
+ */
 
 function HomeScreen() {
   return (
-    <>
-      {/* Left Side - Text Content */}
+    <div className="home-container">
       <div className="text-content">
         <h1 className="main-title">
-          OLÁ, <br />
-          EU SOU A ANA :p
+          {HOME_MESSAGES.GREETING} <br />
+          {HOME_MESSAGES.NAME}
         </h1>
-        <p className="subtitle">Estudante de sistemas de informação na UFSC</p>
+        <p className="subtitle">{HOME_MESSAGES.SUBTITLE}</p>
         <Link to={ROUTES.sobre} className="cta-section" style={{ textDecoration: 'none' }}>
-          <p className="cta-text">Quer saber mais?</p>
-          <div className="cta-arrow">{'>'}</div>
+          <p className="cta-text">{HOME_MESSAGES.CTA}</p>
+          <div className="cta-arrow">{CTA_ARROW}</div>
         </Link>
       </div>
 
-      {/* Right Side - Image */}
       <div className="image-container">
         <div className="image-background" />
         <img 
@@ -29,7 +35,7 @@ function HomeScreen() {
           alt="Ana Teichmann" 
         />
       </div>
-    </>
+    </div>
   );
 }
 

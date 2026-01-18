@@ -110,6 +110,17 @@
   min-height: calc(100vh - 100px);
 }
 
+/* Home Container */
+.home-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: calc(100vh - 100px);
+  position: relative;
+}
+
 .text-content {
   position: absolute;
   left: 188px;
@@ -203,8 +214,6 @@
 .image-background {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
   background: #686868;
   border-radius: 50%;
   z-index: 1;
@@ -214,15 +223,12 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* relativo ao container */
-  width: 95%; /* ocupa quase todo o background */
+  transform: translate(-50%, -50%);
+  width: 95%;
   height: 95%;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain; /* mantém proporção sem cortar nada */
+  object-fit: cover;
   border-radius: 50%;
-  background: transparent;
-  z-index: 2; 
+  z-index: 2;
 }
 
 /* Responsive Design - Home Screen */
@@ -330,7 +336,7 @@
     font-size: clamp(42px, 6vw, 64px);
     height: auto;
     text-align: center;
-  }
+}
 
   .subtitle {
     position: relative;
@@ -396,23 +402,36 @@
 }
 
 @media (max-width: 768px) {
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+  }
+
   .text-content {
-    top: clamp(100px, 10vh, 120px);
+    position: relative;
+    margin-top: clamp(100px, 10vh, 120px);
     padding: 0 15px;
+    max-width: 100%;
   }
 
   .main-title {
-    font-size: clamp(36px, 8vw, 56px);
+    font-size: 2.2rem;
     line-height: 1.1;
   }
 
   .subtitle {
-    font-size: clamp(16px, 3vw, 28px);
-    top: clamp(10px, 1.5vh, 15px);
+    position: relative;
+    font-size: 1rem;
+    margin-top: clamp(10px, 1.5vh, 15px);
   }
 
   .cta-section {
-    top: clamp(25px, 2.5vh, 35px);
+    position: relative;
+    margin-top: clamp(25px, 2.5vh, 35px);
+    justify-content: center;
   }
 
   .cta-text {
@@ -424,15 +443,19 @@
   }
 
   .image-container {
-    width: clamp(250px, 65vw, 350px);
-    top: clamp(30px, 3vh, 50px);
+    position: relative;
+    width: 280px;
+    height: 280px;
+    margin-top: 2rem;
     margin-bottom: 30px;
+    aspect-ratio: 1 / 1;
   }
 }
 
 @media (max-width: 480px) {
   .text-content {
-    top: clamp(80px, 8vh, 100px);
+    position: relative;
+    margin-top: clamp(80px, 8vh, 100px);
     padding: 0 10px;
     margin-bottom: 30px;
   }
@@ -443,13 +466,15 @@
   }
 
   .subtitle {
+    position: relative;
     font-size: clamp(14px, 4vw, 24px);
-    top: clamp(8px, 1vh, 12px);
+    margin-top: clamp(8px, 1vh, 12px);
     line-height: 1.4;
   }
 
   .cta-section {
-    top: clamp(20px, 2vh, 30px);
+    position: relative;
+    margin-top: clamp(20px, 2vh, 30px);
     gap: 8px;
   }
 
@@ -462,14 +487,12 @@
   }
 
   .image-container {
+    position: relative;
     width: clamp(200px, 80vw, 300px);
-    top: clamp(20px, 2vh, 40px);
+    height: clamp(200px, 80vw, 300px);
+    margin-top: 1.5rem;
     margin-bottom: 20px;
-  }
-
-  .fotoAna {
-    width: 90%;
-    height: 90%;
+    aspect-ratio: 1 / 1;
   }
 }
 
@@ -487,7 +510,466 @@
   }
 
   .image-container {
+    position: relative;
     width: clamp(180px, 85vw, 280px);
+    height: clamp(180px, 85vw, 280px);
+    aspect-ratio: 1 / 1;
+  }
+}
+
+/* Responsive Header for Mobile */
+@media (max-width: 768px) {
+  .header {
+    position: relative;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: auto;
+    padding: 15px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-background {
+    display: none;
+  }
+
+  .header-logo-link {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+  }
+
+  .header-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .header-name-link {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: auto;
+    height: auto;
+    margin-left: 10px;
+    flex: 1;
+  }
+
+  .header-name {
+    font-size: clamp(20px, 5vw, 28px);
+    width: auto;
+    height: auto;
+  }
+
+  .header-nav {
+    position: relative;
+    left: 0;
+    top: 10px;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  .nav-link {
+    font-size: clamp(16px, 4vw, 24px);
+    padding: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 10px;
+  }
+
+  .header-logo-link {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header-name {
+    font-size: clamp(18px, 5vw, 24px);
+  }
+
+  .header-nav {
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .nav-link {
+    font-size: clamp(14px, 4.5vw, 20px);
+  }
+}
+
+/* Responsive Cards Container - Para páginas com cards */
+.page-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 100px;
+  padding-bottom: 40px;
+  overflow-x: hidden;
+}
+
+/* Garantir que elementos absolutos dentro do container sejam responsivos */
+.page-container > * {
+  box-sizing: border-box;
+}
+
+/* Cards responsivos */
+@media (max-width: 1024px) {
+  .page-container {
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* Todos os elementos filhos diretos com posição absoluta */
+  .page-container > div,
+  .page-container > a {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    margin: 0 auto !important;
+  }
+
+  /* Cards grandes (580px) - Sobre e Experiência */
+  .page-container > div[style*="580"],
+  .page-container > div[style*="width: 580"] {
+    width: 90% !important;
+    max-width: 500px !important;
+    height: auto !important;
+    min-height: 350px !important;
+    transform: scale(0.9);
+  }
+
+  /* Cards médios (269px) - Projetos */
+  .page-container > a[style*="269"],
+  .page-container > a[style*="width: 269"] {
+    width: 90% !important;
+    max-width: 280px !important;
+    height: auto !important;
+    min-height: 320px !important;
+    transform: scale(0.9);
+  }
+
+  /* Card de contato (828px) */
+  .page-container > div[style*="828"],
+  .page-container > div[style*="width: 828"] {
+    width: 95% !important;
+    max-width: 650px !important;
+    height: auto !important;
+    min-height: 450px !important;
+    transform: scale(0.85);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding-top: 70px;
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 25px;
+  }
+
+  /* Cards grandes */
+  .page-container > div[style*="width: 580"],
+  .page-container > a[style*="width: 269"] {
+    width: 95% !important;
+    max-width: 100% !important;
+    transform: scale(0.8);
+    min-height: 300px !important;
+  }
+
+  /* Cards de projetos */
+  .page-container > a[style*="width: 269"] {
+    max-width: 90% !important;
+    min-height: 300px !important;
+  }
+
+  /* Card de contato */
+  .page-container > div[style*="width: 828"] {
+    width: 98% !important;
+    max-width: 100% !important;
+    transform: scale(0.75);
+    min-height: 400px !important;
+  }
+
+  /* Ajustar fontes dentro dos cards */
+  .page-container div[style*="fontSize: 32"],
+  .page-container div[style*="fontSize: 28"],
+  .page-container div[style*="fontSize: 26"],
+  .page-container div[style*="fontSize: 24"] {
+    font-size: clamp(14px, 4vw, 20px) !important;
+  }
+
+  .page-container div[style*="fontSize: 36"] {
+    font-size: clamp(18px, 5vw, 26px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-container {
+    padding-top: 60px;
+    padding-left: 5px;
+    padding-right: 5px;
+    gap: 20px;
+  }
+
+  /* Cards ainda menores */
+  .page-container > div[style*="width: 580"],
+  .page-container > a[style*="width: 269"] {
+    width: 98% !important;
+    transform: scale(0.7);
+    min-height: 280px !important;
+  }
+
+  .page-container > a[style*="width: 269"] {
+    max-width: 95% !important;
+    min-height: 280px !important;
+  }
+
+  .page-container > div[style*="width: 828"] {
+    width: 100% !important;
+    transform: scale(0.65);
+    min-height: 380px !important;
+  }
+
+  /* Fontes menores */
+  .page-container div[style*="fontSize: 32"],
+  .page-container div[style*="fontSize: 28"],
+  .page-container div[style*="fontSize: 26"],
+  .page-container div[style*="fontSize: 24"] {
+    font-size: clamp(12px, 4.5vw, 18px) !important;
+  }
+
+  .page-container div[style*="fontSize: 36"] {
+    font-size: clamp(16px, 5.5vw, 22px) !important;
+  }
+
+  /* Ajustar posicionamentos internos dos cards */
+  .page-container div[style*="left: 167"],
+  .page-container div[style*="left: 146"],
+  .page-container div[style*="left: 150"],
+  .page-container div[style*="left: 35"],
+  .page-container div[style*="left: 73"],
+  .page-container div[style*="left: 74"] {
+    left: clamp(8px, 3vw, 15px) !important;
+  }
+
+  .page-container div[style*="top: 93"],
+  .page-container div[style*="top: 98"],
+  .page-container div[style*="top: 24"],
+  .page-container div[style*="top: 10"] {
+    top: clamp(5px, 2vw, 12px) !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .page-container {
+    padding-top: 50px;
+    gap: 15px;
+  }
+
+  .page-container > div,
+  .page-container > a {
+    transform: scale(0.65) !important;
+    min-height: 250px !important;
+  }
+
+  .page-container div[style*="fontSize"] {
+    font-size: clamp(10px, 5vw, 16px) !important;
+  }
+}
+
+/* Contact Page Styles */
+.contact-container {
+  min-height: 100vh;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a0a;
+}
+
+.contact-card {
+  width: 100%;
+  max-width: 600px;
+  padding: 3rem;
+  margin-top: 4rem;
+  background: #D9D9D9;
+  border-right: 2px #444444 solid;
+  border-bottom: 2px #444444 solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #1E1E1E;
+  font-family: 'Jersey 10', sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* FORM */
+.contact-form {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-field label {
+  color: #1E1E1E;
+  font-size: 1.2rem;
+  font-family: 'Jersey 10', sans-serif;
+  font-weight: 400;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  background: #686868;
+  border: 2px solid #444444;
+  border-right: 2px #444444 solid;
+  border-bottom: 2px #444444 solid;
+  color: #1E1E1E;
+  font-family: 'Jersey 10', sans-serif;
+  box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #444444;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.contact-submit {
+  padding: 0.9rem;
+  cursor: pointer;
+  background: #686868;
+  border: 2px solid #444444;
+  border-right: 2px #444444 solid;
+  border-bottom: 2px #444444 solid;
+  color: #1E1E1E;
+  font-size: 1.2rem;
+  font-family: 'Jersey 10', sans-serif;
+  font-weight: 400;
+  margin-top: 0.5rem;
+}
+
+.contact-submit:hover:not(:disabled) {
+  background: #7a7a7a;
+}
+
+.contact-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.contact-status {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  text-align: center;
+  font-family: 'Jersey 10', sans-serif;
+  font-size: 1rem;
+  border: 2px solid #444444;
+  border-right: 2px #444444 solid;
+  border-bottom: 2px #444444 solid;
+}
+
+.contact-status.success {
+  background: #90EE90;
+  color: #1E1E1E;
+}
+
+.contact-status.error {
+  background: #FFB6C1;
+  color: #1E1E1E;
+}
+
+/* ICONES / LINKS */
+.contact-socials {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-social-link {
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.contact-social-link:hover {
+  transform: scale(1.1);
+}
+
+.contact-social-link img {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 2rem 1rem;
+  }
+
+  .contact-card {
+    padding: 2rem 1.5rem;
+    max-width: 100%;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .contact-form {
+    max-width: 100%;
+  }
+
+  .contact-socials {
+    gap: 1rem;
   }
 }
 

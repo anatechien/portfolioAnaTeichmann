@@ -7,7 +7,7 @@ function SobreScreen() {
   useScrollToTop();
 
   return (
-    <div style={CONTAINER_STYLES.page}>
+    <div className="page-container" style={CONTAINER_STYLES.page}>
       {/* Card Ana Teichmann */}
       <div
         style={{

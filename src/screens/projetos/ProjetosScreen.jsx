@@ -4,7 +4,7 @@ import { CONTAINER_STYLES, COLORS, BORDER_STYLES, FONTS, EXTERNAL_LINKS } from '
 
 function ProjetosScreen() {
   return (
-    <div style={CONTAINER_STYLES.page}>
+    <div className="page-container" style={CONTAINER_STYLES.page}>
       {/* Card Projeto 1 */}
       <a
         href={EXTERNAL_LINKS.github}
