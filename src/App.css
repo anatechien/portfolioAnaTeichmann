@@ -1067,3 +1067,324 @@
   }
 }
 
+/* Sobre (Figma) */
+.sobre-figma-wrapper {
+  width: 100%;
+  max-width: 1290px;
+  margin: 0 auto;
+  padding: 120px 20px 60px;
+}
+
+.sobre-figma-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: 40px;
+  align-items: start;
+}
+
+.sobre-figma-right-column {
+  display: grid;
+  gap: 40px;
+}
+
+.sobre-figma-card {
+  width: 100%;
+  padding: 44px 42px;
+  box-sizing: border-box;
+}
+
+.sobre-figma-card--large {
+  min-height: 635px;
+}
+
+.sobre-figma-card__header {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.sobre-figma-avatar {
+  width: 90px;
+  height: 90px;
+  background: #d9d9d9;
+  border-radius: 10px;
+  flex: 0 0 auto;
+}
+
+.sobre-figma-identity__name,
+.sobre-figma-identity__age {
+  color: white;
+  font-size: 24px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.sobre-figma-identity__age {
+  margin-top: 10px;
+}
+
+.sobre-figma-divider {
+  width: 100%;
+  height: 1px;
+  background: white;
+  margin: 34px 0 28px;
+}
+
+.sobre-figma-divider--short {
+  width: 274px;
+  max-width: 100%;
+  margin: 18px 0 26px;
+}
+
+.sobre-figma-divider--between {
+  margin: 10px 0;
+}
+
+.sobre-figma-card__title {
+  color: white;
+  font-size: 24px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.sobre-figma-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.sobre-figma-text {
+  color: white;
+  font-size: 20px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.sobre-figma-text strong {
+  font-weight: 600;
+}
+
+.sobre-figma-list {
+  margin: 0;
+  padding-left: 18px;
+  color: white;
+  font-size: 20px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+@media (max-width: 1024px) {
+  .sobre-figma-wrapper {
+    padding-top: 90px;
+  }
+
+  .sobre-figma-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .sobre-figma-right-column {
+    gap: 28px;
+  }
+
+  .sobre-figma-card {
+    padding: 36px 28px;
+  }
+
+  .sobre-figma-card--large {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .sobre-figma-wrapper {
+    padding-top: 80px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .sobre-figma-avatar {
+    width: 76px;
+    height: 76px;
+  }
+
+  .sobre-figma-identity__name,
+  .sobre-figma-identity__age,
+  .sobre-figma-card__title {
+    font-size: 20px;
+  }
+
+  .sobre-figma-text,
+  .sobre-figma-list {
+    font-size: 16px;
+  }
+}
+
+/* Experiências (Figma) */
+.exp-figma-wrapper {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 120px 20px 60px;
+}
+
+.exp-figma-layout {
+  display: grid;
+  grid-template-columns: 124px minmax(0, 1fr);
+  gap: 34px;
+  align-items: start;
+}
+
+.exp-figma-timeline {
+  position: relative;
+  width: 124px;
+  /* termina exatamente na caixinha de 2020 (top 1140 + altura 53) */
+  height: 1193px;
+  flex: 0 0 auto;
+}
+
+.exp-figma-timeline__line {
+  position: absolute;
+  left: 60px;
+  top: 20px;
+  width: 1px;
+  height: calc(100% - 20px);
+  background: white;
+}
+
+.exp-figma-timeline__year {
+  position: absolute;
+  width: 124px;
+  height: 53px;
+  background: #d9d9d9;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 40px;
+  font-family: 'Jersey 10', sans-serif;
+  font-weight: 400;
+}
+
+.exp-figma-timeline__year--top {
+  top: 0;
+}
+.exp-figma-timeline__year--second {
+  top: 393px;
+}
+.exp-figma-timeline__year--third {
+  top: 766px;
+}
+.exp-figma-timeline__year--fourth {
+  top: 1140px;
+}
+
+.exp-figma-cards {
+  display: grid;
+  gap: 38px;
+}
+
+.exp-figma-card {
+  width: 100%;
+  max-width: 1080px;
+  padding: 34px 50px 32px;
+  box-sizing: border-box;
+}
+
+.exp-figma-card__title {
+  color: white;
+  font-size: 24px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.exp-figma-card__subtitle {
+  color: white;
+  font-size: 20px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.exp-figma-card__text {
+  color: white;
+  font-size: 20px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.exp-figma-card__divider {
+  width: 100%;
+  height: 1px;
+  background: white;
+  margin: 14px 0;
+}
+
+.exp-figma-card__divider--tilt {
+  transform: rotate(1deg);
+  transform-origin: left center;
+}
+
+@media (max-width: 1024px) {
+  .exp-figma-wrapper {
+    padding-top: 90px;
+  }
+
+  /* Mantém timeline vertical e cards ao lado enquanto der */
+  .exp-figma-layout {
+    grid-template-columns: 124px minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .exp-figma-card {
+    padding: 28px 26px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Timeline continua na esquerda, vertical, e cards continuam empilhados ao lado */
+  .exp-figma-wrapper {
+    padding-top: 80px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .exp-figma-layout {
+    grid-template-columns: 98px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .exp-figma-timeline {
+    width: 98px;
+  }
+
+  .exp-figma-timeline__year {
+    width: 98px;
+    height: 44px;
+    font-size: 32px;
+  }
+
+  .exp-figma-timeline__line {
+    left: 50px;
+  }
+
+  .exp-figma-card__title {
+    font-size: 20px;
+  }
+
+  .exp-figma-card__subtitle,
+  .exp-figma-card__text {
+    font-size: 16px;
+  }
+}
+

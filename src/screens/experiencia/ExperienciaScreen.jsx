@@ -1,691 +1,86 @@
 import React from 'react';
 import '../../App.css';
-import { CONTAINER_STYLES, COLORS, BORDER_STYLES, FONTS } from '../../constants/theme';
+import { CONTAINER_STYLES } from '../../constants/theme';
 
 function ExperienciaScreen() {
+  const cardBaseStyle = {
+    background: '#1E1E1E',
+    borderRadius: 46,
+    border: '2px solid white',
+    color: 'white',
+  };
+
   return (
-    <div className="page-container" style={CONTAINER_STYLES.page}>
-      {/* Card Experiência 1 */}
-      <div
-        style={{
-          width: 580,
-          height: 420,
-          left: 100,
-          top: 150,
-          position: 'absolute',
-          overflow: 'hidden',
-        }}
-      >
-        <div
-          style={{
-            width: 413,
-            height: 500,
-            left: 146,
-            top: 93,
-            position: 'absolute',
-            background: COLORS.cardBackground,
-            borderRight: BORDER_STYLES.right,
-            borderBottom: BORDER_STYLES.bottom,
-          }}
-        />
-        <div
-          style={{
-            width: 411,
-            height: 21,
-            left: 150,
-            top: 98,
-            position: 'absolute',
-            background: COLORS.headerBackground,
-            borderRight: BORDER_STYLES.right,
-            borderBottom: BORDER_STYLES.bottom,
-          }}
-        />
-        {/* Botões de janela */}
-        <div
-          style={{
-            width: 12,
-            height: 12,
-            left: 536,
-            top: 103,
-            position: 'absolute',
-            background: COLORS.cardBackground,
-            borderRight: BORDER_STYLES.small,
-            borderBottom: BORDER_STYLES.small,
-          }}
-        />
-        <div
-          style={{
-            width: 12,
-            height: 12,
-            left: 516,
-            top: 103,
-            position: 'absolute',
-            background: COLORS.cardBackground,
-            borderRight: BORDER_STYLES.small,
-            borderBottom: BORDER_STYLES.small,
-          }}
-        />
-        <div
-          style={{
-            width: 12,
-            height: 12,
-            left: 496,
-            top: 103,
-            position: 'absolute',
-            background: COLORS.cardBackground,
-            borderRight: BORDER_STYLES.small,
-            borderBottom: BORDER_STYLES.small,
-          }}
-        />
-        <div
-          style={{
-            width: 6,
-            height: 6,
-            left: 519,
-            top: 105.5,
-            position: 'absolute',
-            background: '#D9D9D9',
-            border: BORDER_STYLES.small,
-          }}
-        />
-        <div
-          style={{
-            width: 6,
-            height: 11,
-            left: 539,
-            top: 101,
-            position: 'absolute',
-            color: COLORS.border,
-            fontSize: 14,
-            fontFamily: 'Jersey 10',
-            fontWeight: 400,
-            wordWrap: 'break-word',
-          }}
-        >
-          x
-        </div>
-        <div
-          style={{
-            width: 7,
-            height: 9,
-            left: 498,
-            top: 103,
-            position: 'absolute',
-            color: COLORS.border,
-            fontSize: 14,
-            fontFamily: 'Jersey 10',
-            fontWeight: 400,
-            wordWrap: 'break-word',
-          }}
-        >
-          -
-        </div>
-        {/* Barra de scroll */}
-        <div
-          style={{
-            width: 9,
-            height: 230,
-            left: 539,
-            top: 137,
-            position: 'absolute',
-            background: COLORS.headerBackground,
-          }}
-        />
-        <div
-          style={{
-            width: 3,
-            height: 3,
-            left: 542,
-            top: 137,
-            position: 'absolute',
-            background: COLORS.border,
-          }}
-        />
-        <div
-          style={{
-            width: 6,
-            height: 3,
-            left: 539,
-            top: 140,
-            position: 'absolute',
-            background: COLORS.border,
-          }}
-        />
-        <div
-          style={{
-            width: 3,
-            height: 3,
-            left: 545,
-            top: 140,
-            position: 'absolute',
-            background: COLORS.border,
-          }}
-        />
-        <div
-          style={{
-            width: 3,
-            height: 3,
-            left: 542,
-            top: 364,
-            position: 'absolute',
-            background: COLORS.border,
-          }}
-        />
-        <div
-          style={{
-            width: 9,
-            height: 3,
-            left: 539,
-            top: 361,
-            position: 'absolute',
-            background: COLORS.border,
-          }}
-        />
-        <div
-          style={{
-            width: 3,
-            height: 107,
-            left: 542,
-            top: 150,
-            position: 'absolute',
-            background: COLORS.border,
-          }}
-        />
-        {/* Título */}
-        <div
-          style={{
-            width: 500,
-            height: 29,
-            left: 167,
-            top: 120,
-            position: 'absolute',
-            color: COLORS.textDark,
-            fontSize: 26,
-            fontFamily: FONTS.tiny5,
-            fontWeight: 400,
-            wordWrap: 'break-word',
-          }}
-        >
-          Level 2019 | Internacional
-        </div>
-        {/* Conteúdo */}
-        <div
-          style={{
-            width: 320,
-            height: 232,
-            left: 167,
-            top: 150,
-            position: 'absolute',
-            color: COLORS.textDark,
-            fontSize: 28,
-            fontFamily: "'Jersey 10', sans-serif",
-            fontWeight: 400,
-            wordWrap: 'break-word',
-          }}
-        >
-          Intercâmbio na Alemanha
-          <br />
-          <br />
-          Primeiro grande upgrade: contato com nova cultura, idioma e independência.
-          <br />
-          <br />
-          Skills desbloqueadas: adaptação, comunicação, autonomia.
-        </div>
-      </div>
+    <div className="page-container" style={{ ...CONTAINER_STYLES.page, background: '#1E1E1E' }}>
+      <div className="exp-figma-wrapper">
+        <div className="exp-figma-layout">
+          <aside className="exp-figma-timeline" aria-label="Linha do tempo">
+            <div className="exp-figma-timeline__line" aria-hidden="true" />
+            <div className="exp-figma-timeline__year exp-figma-timeline__year--top">2026</div>
+            <div className="exp-figma-timeline__year exp-figma-timeline__year--second">2025</div>
+            <div className="exp-figma-timeline__year exp-figma-timeline__year--third">2023</div>
+            <div className="exp-figma-timeline__year exp-figma-timeline__year--fourth">2020</div>
+          </aside>
 
-      {/* Card Experiência 2 */}
-      <div
-        style={{
-          width: 580,
-          height: 460,
-          left: 700,
-          top: 140,
-          position: 'absolute',
-          overflow: 'hidden',
-        }}
-      >
-        <div
-          style={{
-            width: 413,
-            height: 560,
-            left: 146,
-            top: 93,
-            position: 'absolute',
-            background: COLORS.cardBackground,
-            borderRight: BORDER_STYLES.right,
-            borderBottom: BORDER_STYLES.bottom,
-          }}
-        />
-        <div
-          style={{
-            width: 411,
-            height: 21,
-            left: 150,
-            top: 98,
-            position: 'absolute',
-            background: COLORS.headerBackground,
-            borderRight: BORDER_STYLES.right,
-            borderBottom: BORDER_STYLES.bottom,
-          }}
-        />
-        {/* Botões de janela */}
-        <div
-          style={{
-            width: 12,
-            height: 12,
-            left: 536,
-            top: 103,
-            position: 'absolute',
-            background: COLORS.cardBackground,
-            borderRight: BORDER_STYLES.small,
-            borderBottom: BORDER_STYLES.small,
-          }}
-        />
-        <div
-          style={{
-            width: 12,
-            height: 12,
-            left: 516,
-            top: 103,
-            position: 'absolute',
-            background: COLORS.cardBackground,
-            borderRight: BORDER_STYLES.small,
-            borderBottom: BORDER_STYLES.small,
-          }}
-        />
-        <div
-          style={{
-            width: 12,
-            height: 12,
-            left: 496,
-            top: 103,
-            position: 'absolute',
-            background: COLORS.cardBackground,
-            borderRight: BORDER_STYLES.small,
-            borderBottom: BORDER_STYLES.small,
-          }}
-        />
-        <div
-          style={{
-            width: 6,
-            height: 6,
-            left: 519,
-            top: 105.5,
-            position: 'absolute',
-            background: '#D9D9D9',
-            border: BORDER_STYLES.small,
-          }}
-        />
-        <div
-          style={{
-            width: 6,
-            height: 11,
-            left: 539,
-            top: 101,
-            position: 'absolute',
-            color: COLORS.border,
-            fontSize: 14,
-            fontFamily: 'Jersey 10',
-            fontWeight: 400,
-            wordWrap: 'break-word',
-          }}
-        >
-          x
-        </div>
-        <div
-          style={{
-            width: 7,
-            height: 9,
-            left: 498,
-            top: 103,
-            position: 'absolute',
-            color: COLORS.border,
-            fontSize: 14,
-            fontFamily: 'Jersey 10',
-            fontWeight: 400,
-            wordWrap: 'break-word',
-          }}
-        >
-          -
-        </div>
-        {/* Barra de scroll */}
-        <div
-          style={{
-            width: 9,
-            height: 230,
-            left: 539,
-            top: 137,
-            position: 'absolute',
-            background: COLORS.headerBackground,
-          }}
-        />
-        <div
-          style={{
-            width: 3,
-            height: 3,
-            left: 542,
-            top: 137,
-            position: 'absolute',
-            background: COLORS.border,
-          }}
-        />
-        <div
-          style={{
-            width: 6,
-            height: 3,
-            left: 539,
-            top: 140,
-            position: 'absolute',
-            background: COLORS.border,
-          }}
-        />
-        <div
-          style={{
-            width: 3,
-            height: 3,
-            left: 545,
-            top: 140,
-            position: 'absolute',
-            background: COLORS.border,
-          }}
-        />
-        <div
-          style={{
-            width: 3,
-            height: 3,
-            left: 542,
-            top: 364,
-            position: 'absolute',
-            background: COLORS.border,
-          }}
-        />
-        <div
-          style={{
-            width: 9,
-            height: 3,
-            left: 539,
-            top: 361,
-            position: 'absolute',
-            background: COLORS.border,
-          }}
-        />
-        <div
-          style={{
-            width: 3,
-            height: 107,
-            left: 542,
-            top: 150,
-            position: 'absolute',
-            background: COLORS.border,
-          }}
-        />
-        {/* Título */}
-        <div
-          style={{
-            width: 200,
-            height: 29,
-            left: 167,
-            top: 120,
-            position: 'absolute',
-            color: COLORS.textDark,
-            fontSize: 26,
-            fontFamily: FONTS.tiny5,
-            fontWeight: 400,
-            wordWrap: 'break-word',
-          }}
-        >
-          Level 2023 | E.M
-        </div>
-        {/* Conteúdo */}
-        <div
-          style={{
-            width: 320,
-            height: 232,
-            left: 167,
-            top: 150,
-            position: 'absolute',
-            color: COLORS.textDark,
-            fontSize: 28,
-            fontFamily: "'Jersey 10', sans-serif",
-            fontWeight: 400,
-            wordWrap: 'break-word',
-          }}
-        >
-          Conclusão do Ensino Médio Técnico em Química – IFSC
-          <br />
-          <br />
-          Base sólida em pensamento analítico, organização e resolução de problemas.
-          <br />
-          <br />
-          Skills desbloqueadas: lógica, responsabilidade, método científico.
-        </div>
-      </div>
+          <main className="exp-figma-cards">
+            <section className="exp-figma-card" style={cardBaseStyle}>
+              <div className="exp-figma-card__title">Membro efetivo na Pixel</div>
+              <div className="exp-figma-card__divider" />
+              <div className="exp-figma-card__subtitle">Empresa júnior de soluções tecnológicas da UFSC</div>
+              <div className="exp-figma-card__divider" />
+              <p className="exp-figma-card__text">
+                Aprendizado na prática sobre projetos de tecnologia e contato com empresas.
+              </p>
+              <div className="exp-figma-card__divider" />
+              <p className="exp-figma-card__text">
+                Skills desbloqueadas: React.js, JavaScript e trabalho em equipe.
+              </p>
+            </section>
 
-      {/* Card Experiência 3 */}
-      <div
-        style={{
-          width: 580,
-          height: 550,
-          left: 400,
-          top: 550,
-          position: 'absolute',
-          overflow: 'hidden',
-        }}
-      >
-        <div
-          style={{
-            width: 413,
-            height: 420,
-            left: 146,
-            top: 93,
-            position: 'absolute',
-            background: COLORS.cardBackground,
-            borderRight: BORDER_STYLES.right,
-            borderBottom: BORDER_STYLES.bottom,
-          }}
-        />
-        <div
-          style={{
-            width: 411,
-            height: 21,
-            left: 150,
-            top: 98,
-            position: 'absolute',
-            background: COLORS.headerBackground,
-            borderRight: BORDER_STYLES.right,
-            borderBottom: BORDER_STYLES.bottom,
-          }}
-        />
-        {/* Botões de janela */}
-        <div
-          style={{
-            width: 12,
-            height: 12,
-            left: 536,
-            top: 103,
-            position: 'absolute',
-            background: COLORS.cardBackground,
-            borderRight: BORDER_STYLES.small,
-            borderBottom: BORDER_STYLES.small,
-          }}
-        />
-        <div
-          style={{
-            width: 12,
-            height: 12,
-            left: 516,
-            top: 103,
-            position: 'absolute',
-            background: COLORS.cardBackground,
-            borderRight: BORDER_STYLES.small,
-            borderBottom: BORDER_STYLES.small,
-          }}
-        />
-        <div
-          style={{
-            width: 12,
-            height: 12,
-            left: 496,
-            top: 103,
-            position: 'absolute',
-            background: COLORS.cardBackground,
-            borderRight: BORDER_STYLES.small,
-            borderBottom: BORDER_STYLES.small,
-          }}
-        />
-        <div
-          style={{
-            width: 6,
-            height: 6,
-            left: 519,
-            top: 105.5,
-            position: 'absolute',
-            background: '#D9D9D9',
-            border: BORDER_STYLES.small,
-          }}
-        />
-        <div
-          style={{
-            width: 6,
-            height: 11,
-            left: 539,
-            top: 101,
-            position: 'absolute',
-            color: COLORS.border,
-            fontSize: 14,
-            fontFamily: 'Jersey 10',
-            fontWeight: 400,
-            wordWrap: 'break-word',
-          }}
-        >
-          x
-        </div>
-        <div
-          style={{
-            width: 7,
-            height: 9,
-            left: 498,
-            top: 103,
-            position: 'absolute',
-            color: COLORS.border,
-            fontSize: 14,
-            fontFamily: 'Jersey 10',
-            fontWeight: 400,
-            wordWrap: 'break-word',
-          }}
-        >
-          -
-        </div>
-        {/* Barra de scroll */}
-        <div
-          style={{
-            width: 9,
-            height: 230,
-            left: 539,
-            top: 137,
-            position: 'absolute',
-            background: COLORS.headerBackground,
-          }}
-        />
-        <div
-          style={{
-            width: 3,
-            height: 3,
-            left: 542,
-            top: 137,
-            position: 'absolute',
-            background: COLORS.border,
-          }}
-        />
-        <div
-          style={{
-            width: 6,
-            height: 3,
-            left: 539,
-            top: 140,
-            position: 'absolute',
-            background: COLORS.border,
-          }}
-        />
-        <div
-          style={{
-            width: 3,
-            height: 3,
-            left: 545,
-            top: 140,
-            position: 'absolute',
-            background: COLORS.border,
-          }}
-        />
-        <div
-          style={{
-            width: 3,
-            height: 3,
-            left: 542,
-            top: 364,
-            position: 'absolute',
-            background: COLORS.border,
-          }}
-        />
-        <div
-          style={{
-            width: 9,
-            height: 3,
-            left: 539,
-            top: 361,
-            position: 'absolute',
-            background: COLORS.border,
-          }}
-        />
-        <div
-          style={{
-            width: 3,
-            height: 107,
-            left: 542,
-            top: 150,
-            position: 'absolute',
-            background: COLORS.border,
-          }}
-        />
-        {/* Título */}
-        <div
-          style={{
-            width: 400,
-            height: 29,
-            left: 167,
-            top: 120,
-            position: 'absolute',
-            color: COLORS.textDark,
-            fontSize: 26,
-            fontFamily: FONTS.tiny5,
-            fontWeight: 400,
-            wordWrap: 'break-word',
-          }}
-        >
-          Level 2025 | atualmente
-        </div>
-        {/* Conteúdo */}
-        <div
-          style={{
-            width: 320,
-            height: 232,
-            left: 167,
-            top: 150,
-            position: 'absolute',
-            color: COLORS.textDark,
-            fontSize: 28,
-            fontFamily: "'Jersey 10', sans-serif",
-            fontWeight: 400,
-            wordWrap: 'break-word',
-          }}
-        >
-          Ingresso na graduação em Sistemas de Informação - UFSC
-          <br />
-          <br />
-          Entrada na Empresa Júnior Pixel Início da jornada no mundo da tecnologia e projetos reais, trabalhando em equipe e aprendendo na prática.
-          <br />
-          <br />
-          Skills desbloqueadas: trabalho em equipe, tecnologia, projetos digitais.
+            <section className="exp-figma-card" style={cardBaseStyle}>
+              <div className="exp-figma-card__title">Ingresso na graduação UFSC</div>
+              <div className="exp-figma-card__divider" />
+              <div className="exp-figma-card__subtitle">Bacharelado em Sistemas de Informação</div>
+              <div className="exp-figma-card__divider exp-figma-card__divider--tilt" />
+              <p className="exp-figma-card__text">
+                Primeiro grande upgrade: contato com nova cultura, idioma e independência.
+                Skills desbloqueadas: adaptação, comunicação, autonomia.
+              </p>
+              <div className="exp-figma-card__divider" />
+              <p className="exp-figma-card__text">
+                Skills desbloqueadas: Python e lógica de programação.
+              </p>
+            </section>
+
+            <section className="exp-figma-card" style={cardBaseStyle}>
+              <div className="exp-figma-card__title">Formação Ensino médio</div>
+              <div className="exp-figma-card__divider" />
+              <div className="exp-figma-card__subtitle">Conclusão do Ensino Médio Técnico em Química no IFSC</div>
+              <div className="exp-figma-card__divider" />
+              <p className="exp-figma-card__text">
+                Me ajudou muito a entrar no meio da tecnologia, área que tenho bastante interesse e fascínio.
+              </p>
+              <div className="exp-figma-card__divider" />
+              <p className="exp-figma-card__text">
+                Skills desbloqueadas: Lógica, responsabilidade acadêmica e práticas laboratoriais.
+              </p>
+            </section>
+
+            <section className="exp-figma-card" style={cardBaseStyle}>
+              <div className="exp-figma-card__title">Exploração Internacional</div>
+              <div className="exp-figma-card__divider" />
+              <div className="exp-figma-card__subtitle">Intercâmbio na Alemanha</div>
+              <div className="exp-figma-card__divider" />
+              <p className="exp-figma-card__text">
+                Primeiro grande upgrade: contato com nova cultura, idioma e independência.
+                Skills desbloqueadas: adaptação, comunicação, autonomia.
+              </p>
+              <div className="exp-figma-card__divider" />
+              <p className="exp-figma-card__text">
+                Skills desbloqueadas: adaptação, comunicação e autonomia.
+              </p>
+            </section>
+          </main>
         </div>
       </div>
     </div>
