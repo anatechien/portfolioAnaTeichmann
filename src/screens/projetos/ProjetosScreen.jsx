@@ -7,7 +7,7 @@ function ProjetosScreen() {
     <div className="page-container" style={CONTAINER_STYLES.page}>
       {/* Card Projeto 1 */}
       <a
-        href={EXTERNAL_LINKS.github}
+        href={EXTERNAL_LINKS.githubDesafioLabSec}
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -221,17 +221,18 @@ function ProjetosScreen() {
             }}
           />
         </div>
-        {/* Imagem do projeto */}
-        <div
+        {/* Imagem do projeto (sem caixa cinza atrás) */}
+        <img
+          src={`${process.env.PUBLIC_URL}/images/labsec-preview.png`}
+          alt="LabSec — interface do desafio de cibersegurança"
           style={{
             width: 193,
             height: 117,
             left: 35,
             top: 60,
             position: 'absolute',
-            background: COLORS.headerBackground,
-            borderRight: BORDER_STYLES.right,
-            borderBottom: BORDER_STYLES.bottom,
+            objectFit: 'contain',
+            display: 'block',
           }}
         />
         {/* Título */}
@@ -239,30 +240,40 @@ function ProjetosScreen() {
           style={{
             left: 35,
             top: 184,
+            width: 200,
             position: 'absolute',
             color: COLORS.textDark,
-            fontSize: 24,
+            fontSize: 20,
+            lineHeight: 1.2,
             fontFamily: FONTS.jersey10,
             fontWeight: 400,
             wordWrap: 'break-word',
           }}
         >
-          Projeto 1
+          Desafio de
+          <br />
+          cibersegurança(labsec)
         </div>
         {/* Descrição */}
         <div
           style={{
             left: 35,
-            top: 217,
+            top: 232,
+            width: 200,
+            maxHeight: 132,
+            overflowY: 'auto',
             position: 'absolute',
             color: COLORS.textDark,
-            fontSize: 24,
+            fontSize: 14,
+            lineHeight: 1.35,
             fontFamily: FONTS.jersey10,
             fontWeight: 400,
             wordWrap: 'break-word',
           }}
         >
-          Descrição:
+          Criptografia aplicada em Python — SHAKE/XOR,
+          PKCS#12, RSA-OAEP, serial de certificado X.509, RSA “textbook” e análise de
+          assinaturas digitais em PDF (PKCS#7).
         </div>
       </a>
 

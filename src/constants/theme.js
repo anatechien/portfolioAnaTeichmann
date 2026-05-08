@@ -24,6 +24,8 @@ export const FONTS = {
 // URLs externas
 export const EXTERNAL_LINKS = {
   github: 'https://github.com/anatechien',
+  githubDesafioLabSec:
+    'https://github.com/anatechien/DesafioCyberSecurityLabsec',
   linkedin: 'https://www.linkedin.com/in/ana-teichmann-0948a1300',
 };
 
